@@ -12,9 +12,27 @@ export const resolvers = {
           },
         });
         return users;
-
       } catch (error) {
         throw new Error("Error al obtener los usuarios");
+      }
+    },
+
+    getUserByEmail: async (_: unknown, args: { email: string }, context: MyContext) => {
+      try {
+        const user = await context.prisma.user.findUnique({
+          where: {
+            email: args.email,
+          },
+          select: {
+            id: true,
+            name: true,
+            roleId: true,
+          },
+        });
+
+        return user;
+      } catch (error) {
+        throw new Error("Error al obtener usuario por correo electrónico");
       }
     },
 

@@ -29,14 +29,31 @@ export const typeDefs = `#graphql
     id: String
     name: String
   }
-
+  #################
+  scalar DateTime
+  #################
+  #Se implementa el tipo scalar para el Datetime  y proporcionar una lógica #personalizada para su serialización y deserialización. 
+  #esto puede variar segun la implementación especifica de graphql
+  #################
   type Query {
     getUsers: [User]
     getUserById(userId: String, sessionToken: String): User
+    getUserByEmail(email: String!): User
     getTokenSession(userId: String): Session
     getInteractions: [Interaction]
     getCountries: [Country]
     getInteractionsByUser(userId: String): [Interaction]
+    getUserMonitoringByTimeRange(email: String!, start: DateTime!, end: DateTime!): [UserMonitoring!]!
+    getTopUsersByMonitoringCount(start: DateTime!, end: DateTime!): [UserMonitoring!]!
+    getTopUsersByUsageType(type: String!, countryId: String!, start: DateTime!, end: DateTime!): [UserMonitoring!]!
+  }
+
+  type UserMonitoring {
+  id: String!
+  usage: Int!
+  description: String!
+  createdAt: DateTime!
+  User: User!
   }
 
   type Mutation {

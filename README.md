@@ -9,6 +9,15 @@ devDependicies: [typescript, @types/node, ts-node, nodemon]
 
 #COMANDOS CLAVES PARA INIZIALIZAR EL PROYECTO PARA NUESTRO ORM EN PRISMA (Nota: Toda la información suministrada en el siguiente documento es siguiento cada uno de los pasos de las librerias oficiales y busquedas por internet [`https://www.prisma.io/` , `ttps://graphql.org`, `Google.com`] )
 
+`MODULARIZACIÓN DE LOS RESOLVERS graphql/resolvers/*`
+Esta parte es importante para la legibilidad de cada uno de los resolvers de las queries: Es importante aclarar que para esta parte tuve mucha ayuda del navegador/IA
+Reconocer que estas herramientas son el factor clave para asumir riesgos y nuevos aprendizajes atravez de las consultas y implementando las mejores practicas. ¡Siempre y cuando se utilizan de una manera responsable!
+La modularización de esta parte nos permite tener:
+-Organización del Código
+-Reutilización de Código
+-Mantenimiento Sencillo
+-Facilita las prubas Unitarias
+
 4.Inicializamos el proyecto Prisma `npx prisma init`
 Configuración Inicial:
 
