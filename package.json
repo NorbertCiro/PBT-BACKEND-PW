@@ -1,0 +1,36 @@
+{
+  "name": "ubunut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate": "npx prisma generate",
+    "deploy": "npx prisma migrate deploy",
+    "dev": "nodemon src/index.ts",
+    "compile": "tsc",
+    "build": "npm run generate",
+    "start": "node dist/src/index.js",
+    "start1": "npm run compile && node ./dist/index.js"
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.9.5",
+    "@prisma/client": "^5.5.2",
+    "apollo-server": "^3.12.1",
+    "dotenv": "^16.3.1",
+    "graphql": "^16.8.1",
+    "jsonwebtoken": "^9.0.2",
+    "prisma": "^5.5.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.5",
+    "nodemon": "^3.0.1"
+  }
+}
