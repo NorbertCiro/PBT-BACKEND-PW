@@ -117,3 +117,50 @@ build: Indica cómo construir el contenedor. En este caso, especificamos el cont
 
 ports: Mapea el puerto 4000 del host al puerto 4000 del contenedor. Puedes ajustar esto según tus necesidades.
 ![Alt text](image.png)
+![Alt text](image-2.png)
+TESTS : PACKAGES
+![Alt text](image-1.png)
+
+Despliegue en AWS Lambda con Apollo Server:
+AWS Lambda (con Apollo Server):
+Configuración del Proyecto:
+
+Configura tu proyecto con Apollo Server.
+Empaquetar y Subir:
+
+Empaqueta el código en un ZIP.
+Crea una función Lambda.
+Configura el gatillo (puede ser API Gateway).
+Sube el paquete ZIP.
+Variables de Entorno:
+
+Configura las variables de entorno, como la cadena de conexión a la base de datos.
+IAM y Roles:
+
+Asocia roles de IAM adecuados para la función Lambda.
+Despliegue:
+
+Despliega la función Lambda.
+AWS ECS (Elastic Container Service):
+Configuración del Proyecto:
+
+Configura tu proyecto con Apollo Server.
+Crear Imagen Docker:
+
+Crea una imagen Docker con tu aplicación.
+Subir la Imagen:
+
+Sube la imagen Docker a un registro de contenedores (por ejemplo, Amazon ECR).
+Configurar ECS:
+
+Crea un clúster ECS.
+Define un servicio ECS que utiliza la imagen Docker.
+Variables de Entorno:
+
+Configura las variables de entorno, como la cadena de conexión a la base de datos.
+IAM y Roles:
+
+Asocia roles de IAM adecuados para los contenedores en ECS.
+Despliegue:
+
+Despliega el servicio ECS.
